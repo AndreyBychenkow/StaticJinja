@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h1>Добро пожаловать на {{ title }}!</h1>
+<p>Это мой личный сайт-портфолио. Здесь я делюсь проектами.</p>
+
+<div class="github-section">
+  <p>Посетите мой GitHub:
+    <a href="{{ github_url }}" class="github-link">
+      {{ github_title }}
+    </a>
+  </p>
+</div>
+
+{% with
+page="Домашняя",
+number=1
+%}
+{% include "_card.html" %}
+{% endwith %}
+{% endblock %}
